@@ -1,0 +1,26 @@
+{
+  "name": "resource-optimizer-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diegourban/resource-optimizer-api.git"
+  },
+  "author": "Diego Leonardo Urban",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diegourban/resource-optimizer-api/issues"
+  },
+  "homepage": "https://github.com/diegourban/resource-optimizer-api#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "clean-css": "^4.1.8",
+    "express": "^4.15.4",
+    "html-minifier": "^3.5.3",
+    "uglify-js": "^3.0.28"
+  }
+}
