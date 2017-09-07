@@ -1,4 +1,4 @@
-# resource-optimizer
+# resource-optimizer-api
 API to optimize web page resources
 
 ## Installation
