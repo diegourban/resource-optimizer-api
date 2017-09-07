@@ -5,4 +5,4 @@ API to optimize web page resources
 ```npm install``` - to install the dependencies
 
 ## Usage
-```node index.js``` - to start the api server
+```npm start``` - to start the api server
