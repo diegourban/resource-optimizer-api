@@ -1,0 +1,71 @@
+{
+	"variables": [],
+	"info": {
+		"name": "resource optimizer",
+		"_postman_id": "eef420e9-5689-a005-5265-9923e7a49a7d",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "post css",
+			"request": {
+				"url": "http://localhost:3000/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/css",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "/* Fonte: https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors */\r\n/* <a> elements with a title attribute */\r\na[title] {\r\n  color: purple;\r\n}\r\n\r\n/* <a> elements with an href matching \"https://example.org\" */\r\na[href=\"https://example.org\"] {\r\n  color: green;\r\n}\r\n\r\n/* <a> elements with an href containing \"example\" */\r\na[href*=\"example\"] {\r\n  font-size: 2em;\r\n}\r\n\r\n/* <a> elements with an href ending \".org\" */\r\na[href$=\".org\"] {\r\n  font-style: italic;\r\n}\r\n\r\n/* Fonte: https://www.w3.org/TR/selectors/#attribute-selectors */\r\nspan[class=\"example\"] {\r\n  font-size: 2em;\r\n}\r\n\r\nspan[hello=\"Cleveland\"][goodbye=\"Columbus\"] {\r\n  font-style: italic;\r\n}\r\n\r\na[rel~=\"copyright\"] {\r\n  color: green;\r\n}\r\n\r\na[hreflang=fr] {\r\n  color: purple;\r\n}\r\n\r\na[hreflang|=\"en\"] {\r\n  font-size: 2em;\r\n}\r\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "post html",
+			"request": {
+				"url": "http://localhost:3000/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/html",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<html>\n\t<head>\n\t\t<title>Título</title>\n\t</head>\n\t\n\t<body>\n\t\t<h1>Teste</h1>\n\t</body>\n</html>"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "post js",
+			"request": {
+				"url": "http://localhost:3000/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/javascript",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "function teste() {\n\tconsole.log('teste');\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
