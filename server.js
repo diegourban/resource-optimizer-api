@@ -1,9 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const CleanCSS = require('clean-css');
-const UglifyJS = require("uglify-js");
-const HtmlMinifier = require('html-minifier');
+const CssMinifier = require('./src/CssMinifier');
+const JsMinifier = require('./src/JsMinifier');
+const HtmlMinifier = require('./src/HtmlMinifier');
 
 var app = express();
 
@@ -48,10 +48,9 @@ function checkContentType(req, contentType) {
 }
 
 routerCSS.post("/", function(req, res) {
-  console.log('minify css');
+  console.log('css router');
 
   req.rawBody = '';
-  req.setEncoding('utf8');
 
   req.on('data', function(chunk) {
     req.rawBody += chunk;
@@ -59,8 +58,8 @@ routerCSS.post("/", function(req, res) {
 
   req.on('end', function() {
     console.log(req.rawBody);
-    new CleanCSS({ returnPromise: true })
-      .minify(req.rawBody)
+
+    new CssMinifier().minify(req.rawBody)
       .then(function(output) {
         console.log(output);
         res.setHeader('Content-Type', req.get('Content-Type'));
@@ -74,10 +73,9 @@ routerCSS.post("/", function(req, res) {
 });
 
 routerJS.post("/", function(req, res) {
-  console.log('minify js');
+  console.log('js router');
 
   req.rawBody = '';
-  req.setEncoding('utf8');
 
   req.on('data', function(chunk) {
     req.rawBody += chunk;
@@ -86,7 +84,7 @@ routerJS.post("/", function(req, res) {
   req.on('end', function() {
     console.log(req.rawBody);
 
-    var result = UglifyJS.minify(req.rawBody);
+    var result = new JsMinifier().minify(req.rawBody);
     console.log(result.code);
     res.setHeader('Content-Type', req.get('Content-Type'));
     res.send(result.code);
@@ -94,10 +92,9 @@ routerJS.post("/", function(req, res) {
 });
 
 routerHTML.post("/", function(req, res) {
-  console.log('minify html');
+  console.log('html router');
 
   req.rawBody = '';
-  req.setEncoding('utf8');
 
   req.on('data', function(chunk) {
     req.rawBody += chunk;
@@ -106,10 +103,7 @@ routerHTML.post("/", function(req, res) {
   req.on('end', function() {
     console.log(req.rawBody);
 
-    var result = HtmlMinifier.minify(req.rawBody, {
-      removeAttributeQuotes: true,
-      collapseWhitespace: true
-    });
+    var result = new HtmlMinifier().minify(req.rawBody);
     console.log(result);
     res.setHeader('Content-Type', req.get('Content-Type'));
     res.send(result);
