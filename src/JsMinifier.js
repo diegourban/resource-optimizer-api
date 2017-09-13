@@ -6,9 +6,9 @@ module.exports = class JsMinifier {
     // no opp
   }
 
-  minify(content) {
+  minify(input) {
     console.log("minify js");
-    return uglifyjs.minify(content);
+    return uglifyjs.minify(input);
   }
 
 }

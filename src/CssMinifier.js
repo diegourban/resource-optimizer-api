@@ -6,9 +6,9 @@ module.exports = class CssMinifier {
     this.strategy = new cleancss({returnPromise : true});
   }
 
-  minify(content) {
+  minify(input) {
     console.log("minify css");
-    return this.strategy.minify(content);
+    return this.strategy.minify(input);
   }
 
 }

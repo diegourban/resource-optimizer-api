@@ -9,9 +9,9 @@ module.exports = class HtmlMinifier {
     };
   }
 
-  minify(content) {
+  minify(input) {
     console.log("minify html");
-    return htmlminifier.minify(content, this.options);
+    return htmlminifier.minify(input, this.options);
   }
 
 }

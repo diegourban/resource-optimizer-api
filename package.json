@@ -21,7 +21,9 @@
     "body-parser": "^1.17.2",
     "clean-css": "^4.1.8",
     "express": "^4.15.4",
+    "formidable": "^1.1.1",
     "html-minifier": "^3.5.3",
+    "imagemin": "^5.3.1",
     "uglify-js": "^3.0.28"
   }
 }
