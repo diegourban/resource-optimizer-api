@@ -192,8 +192,6 @@ routerImage.post("/", function(req, res) {
       .then(function(output) {
         res.setHeader('Content-Type', req.get('Content-Type'));
         res.send(output);
-        //res.write(output, 'binary');
-        //res.end(null, 'binary');
       })
       .catch(function(err) {
         console.log('Ocorreu um erro na minificação: \n' + err);
