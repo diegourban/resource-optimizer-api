@@ -61,7 +61,72 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "function teste() {\n\tconsole.log('teste');\n}"
+					"raw": "/** teste */\nfunction teste() {\n\tvar x = 'oi';\n\tconsole.log(x);\n\tconsole.log('teste');\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "post png",
+			"request": {
+				"url": "http://localhost:3000/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "image/png",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": ""
+					}
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "post jpeg",
+			"request": {
+				"url": "http://localhost:3000/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "image/jpeg",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": ""
+					}
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "post form upload",
+			"request": {
+				"url": "http://localhost:3000/upload",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "fileName",
+							"description": "",
+							"type": "file",
+							"src": "attribute.css"
+						}
+					]
 				},
 				"description": ""
 			},

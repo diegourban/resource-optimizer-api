@@ -80,7 +80,7 @@ app.use(function(req, res, next) {
     } else if (checkHTMLContent(req)) {
       req.url = "/html" + req.url;
     } else if(checkImageContent(req)) {
-       req.url = "/image" + req.url;
+      req.url = "/image" + req.url;
     } else {
       res.status(400).send('Invalid Content-Type');
     }
