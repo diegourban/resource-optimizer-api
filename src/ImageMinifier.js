@@ -6,14 +6,16 @@ module.exports = class ImageMinifier {
 
   constructor() {
     this._plugins = [
-      imageminJpegtran(),
+      imageminJpegtran({progressive: true}),
       imageminPngquant({quality: '65-80'})
     ]
   }
 
   minify(input) {
     console.log('minify image');
-    return imagemin.buffer(input, this._plugins);
+    return imagemin.buffer(input, {
+      plugins: this._plugins
+    });
   }
 
 }
