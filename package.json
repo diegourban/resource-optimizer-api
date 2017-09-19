@@ -24,6 +24,8 @@
     "formidable": "^1.1.1",
     "html-minifier": "^3.5.3",
     "imagemin": "^5.3.1",
+    "imagemin-jpegtran": "^5.0.2",
+    "imagemin-pngquant": "^5.0.1",
     "uglify-js": "^3.0.28"
   }
 }

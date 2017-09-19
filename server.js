@@ -179,20 +179,21 @@ routerHTML.post("/", function(req, res) {
 routerImage.post("/", function(req, res) {
   console.log("image router");
 
-  req.rawBody = '';
+  var buffers = [];
 
   req.on('data', function(chunk) {
-    req.rawBody += chunk;
+    buffers.push(chunk);
   })
 
   req.on('end', function() {
-    console.log(req.rawBody);
+    var buffer = Buffer.concat(buffers);
 
-    new ImageMinifier().minify(req.rawBody)
+    new ImageMinifier().minify(buffer)
       .then(function(output) {
-        console.log(output);
         res.setHeader('Content-Type', req.get('Content-Type'));
-        res.send(output.styles);
+        res.send(output);
+        //res.write(output, 'binary');
+        //res.end(null, 'binary');
       })
       .catch(function(err) {
         console.log('Ocorreu um erro na minificação: \n' + err);
