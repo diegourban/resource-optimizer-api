@@ -5,10 +5,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const formidable = require('formidable');
 
-const CssMinifier = require('./src/CssMinifier');
-const JsMinifier = require('./src/JsMinifier');
-const HtmlMinifier = require('./src/HtmlMinifier');
-const ImageMinifier = require('./src/ImageMinifier');
+const CssRouter = require('./src/routers/CssRouter');
+const HtmlRouter = require('./src/routers/HtmlRouter');
+const JsRouter = require('./src/routers/JsRouter');
+const ImageRouter = require('./src/routers/ImageRouter');
 
 var uploadDir = '/uploads';
 
@@ -67,18 +67,13 @@ app.post('/upload', function(req, res){
   form.parse(req);
 });
 
-var routerCSS = express.Router();
-var routerHTML = express.Router();
-var routerJS = express.Router();
-var routerImage = express.Router();
-
 app.use(function(req, res, next) {
     if(checkCSSContent(req)) {
       req.url = "/css" + req.url;
-    } else if (checkJSContent(req)) {
-      req.url = "/js" + req.url;
     } else if (checkHTMLContent(req)) {
       req.url = "/html" + req.url;
+    } else if (checkJSContent(req)) {
+      req.url = "/js" + req.url;
     } else if(checkImageContent(req)) {
       req.url = "/image" + req.url;
     } else {
@@ -88,10 +83,10 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.use("/css", routerCSS);
-app.use("/js", routerJS);
-app.use("/html", routerHTML);
-app.use("/image", routerImage);
+app.use("/css", CssRouter);
+app.use("/html", HtmlRouter);
+app.use("/js", JsRouter);
+app.use("/image", ImageRouter);
 
 function checkCSSContent(req) {
   return checkContentType(req, 'text/css');
@@ -112,93 +107,6 @@ function checkImageContent(req) {
 function checkContentType(req, ...contentType) {
   return contentType.includes(req.get('Content-Type'));
 }
-
-routerCSS.post("/", function(req, res) {
-  console.log('css router');
-
-  req.rawBody = '';
-
-  req.on('data', function(chunk) {
-    req.rawBody += chunk;
-  });
-
-  req.on('end', function() {
-    console.log(req.rawBody);
-
-    new CssMinifier().minify(req.rawBody)
-      .then(function(output) {
-        console.log(output);
-        res.setHeader('Content-Type', req.get('Content-Type'));
-        res.send(output.styles);
-      })
-      .catch(function(err) {
-        console.log('Ocorreu um erro na minificação: \n' + err);
-        res.status(500).send(err);
-      })
-  });
-});
-
-routerJS.post("/", function(req, res) {
-  console.log('js router');
-
-  req.rawBody = '';
-
-  req.on('data', function(chunk) {
-    req.rawBody += chunk;
-  });
-
-  req.on('end', function() {
-    console.log(req.rawBody);
-
-    var result = new JsMinifier().minify(req.rawBody);
-    console.log(result.code);
-    res.setHeader('Content-Type', req.get('Content-Type'));
-    res.send(result.code);
-  });
-});
-
-routerHTML.post("/", function(req, res) {
-  console.log('html router');
-
-  req.rawBody = '';
-
-  req.on('data', function(chunk) {
-    req.rawBody += chunk;
-  });
-
-  req.on('end', function() {
-    console.log(req.rawBody);
-
-    var result = new HtmlMinifier().minify(req.rawBody);
-    console.log(result);
-    res.setHeader('Content-Type', req.get('Content-Type'));
-    res.send(result);
-  });
-});
-
-routerImage.post("/", function(req, res) {
-  console.log("image router");
-
-  var buffers = [];
-
-  req.on('data', function(chunk) {
-    buffers.push(chunk);
-  })
-
-  req.on('end', function() {
-    var buffer = Buffer.concat(buffers);
-
-    new ImageMinifier().minify(buffer)
-      .then(function(output) {
-        res.setHeader('Content-Type', req.get('Content-Type'));
-        res.send(output);
-      })
-      .catch(function(err) {
-        console.log('Ocorreu um erro na minificação: \n' + err);
-        res.status(500).send(err);
-      })
-  })
-});
 
 var server = app.listen(3000, function() {
   var uploadPath = path.join(process.cwd(), uploadDir);
