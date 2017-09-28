@@ -1,4 +1,4 @@
-const htmlminifier = require('html-minifier');
+const htmlminifier = require("html-minifier");
 
 module.exports = class HtmlMinifier {
 

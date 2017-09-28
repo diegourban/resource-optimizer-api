@@ -1,4 +1,4 @@
-const cleancss = require('clean-css');
+const cleancss = require("clean-css");
 
 module.exports = class CssMinifier {
 
