@@ -1,11 +1,11 @@
-const API_ENDPOINT = "/api/minify";
-
 const CssRouter = require("../routers/CssRouter");
 const HtmlRouter = require("../routers/HtmlRouter");
 const JsRouter = require("../routers/JsRouter");
 const ImageRouter = require("../routers/ImageRouter");
 
 module.exports = function(app) {
+
+  const API_ENDPOINT = "/api/minify";
 
   app.post(API_ENDPOINT, function(req, res, next){
     if(checkCSSContent(req)) {

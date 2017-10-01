@@ -22,7 +22,6 @@
     "clean-css": "^4.1.8",
     "express": "^4.15.4",
     "express-load": "^1.1.16",
-    "formidable": "^1.1.1",
     "html-minifier": "^3.5.3",
     "imagemin": "^5.3.1",
     "imagemin-jpegtran": "^5.0.2",
