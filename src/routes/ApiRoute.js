@@ -17,7 +17,7 @@ module.exports = function(app) {
     } else if(checkImageContent(req)) {
       req.url = req.url +  "/image";
     } else {
-      res.status(400).send("Invalid Content-Type");
+      return res.status(400).send("Invalid Content-Type");
     }
 
     next();
