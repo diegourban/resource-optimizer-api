@@ -12,6 +12,7 @@ module.exports = class ImageMinifier {
   }
 
   minify(input) {
+    console.log("ImageMinifier");
     return imagemin.buffer(input, {
       plugins: this.plugins
     });

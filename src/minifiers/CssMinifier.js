@@ -7,6 +7,7 @@ module.exports = class CssMinifier {
   }
 
   minify(input) {
+    console.log("CssMinifier");
     return this.strategy.minify(input);
   }
 

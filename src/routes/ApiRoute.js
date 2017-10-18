@@ -7,7 +7,7 @@ module.exports = function(app) {
 
   const API_ENDPOINT = "/api/minify";
 
-  app.post(API_ENDPOINT, function(req, res, next){
+  app.post(API_ENDPOINT, function(req, res, next) {
     if(checkCSSContent(req)) {
       req.url = req.url + "/css";
     } else if (checkHTMLContent(req)) {

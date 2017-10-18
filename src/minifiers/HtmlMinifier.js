@@ -10,6 +10,7 @@ module.exports = class HtmlMinifier {
   }
 
   minify(input) {
+    console.log("HtmlMinifier");
     return htmlminifier.minify(input, this.options);
   }
 
