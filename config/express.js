@@ -7,7 +7,7 @@ module.exports = function() {
 
   app.use(bodyParser.raw());
 
-  load("routes", {cwd : "src"}).into(app);
+  load("routes", {cwd : "lib"}).into(app);
 
   return app;
 }
