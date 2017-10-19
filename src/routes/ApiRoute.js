@@ -1,3 +1,4 @@
+const logger = require("winston");
 const CssRouter = require("../routers/CssRouter");
 const HtmlRouter = require("../routers/HtmlRouter");
 const JsRouter = require("../routers/JsRouter");
@@ -8,6 +9,9 @@ module.exports = function(app) {
   const API_ENDPOINT = "/api/minify";
 
   app.post(API_ENDPOINT, function(req, res, next) {
+    logger.info("Recebendo POST");
+    logger.info("Tipo de Conteúdo: " + req.get("Content-Type"));
+
     if(checkCSSContent(req)) {
       req.url = req.url + "/css";
     } else if (checkHTMLContent(req)) {
@@ -17,9 +21,11 @@ module.exports = function(app) {
     } else if(checkImageContent(req)) {
       req.url = req.url +  "/image";
     } else {
+      logger.warn("Tipo de conteúdo recebido é inválido");
       return res.status(400).send("Invalid Content-Type");
     }
 
+    logger.info("Redirecionando a rota para " + req.url);
     next();
   });
 

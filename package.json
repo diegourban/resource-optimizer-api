@@ -26,6 +26,7 @@
     "imagemin": "^5.3.1",
     "imagemin-jpegtran": "^5.0.2",
     "imagemin-pngquant": "^5.0.1",
-    "uglify-js": "^3.0.28"
+    "uglify-js": "^3.0.28",
+    "winston": "^2.4.0"
   }
 }

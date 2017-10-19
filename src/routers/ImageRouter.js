@@ -1,3 +1,4 @@
+const logger = require("winston");
 const router = require("express").Router();
 const ImageMinifier = require("../minifiers/ImageMinifier");
 
@@ -17,7 +18,7 @@ router.post("/image", function(req, res) {
         res.send(output);
       })
       .catch(function(err) {
-        console.log("Ocorreu um erro na minificação: \n" + err);
+        logger.error("Ocorreu um erro na minificação: " + err);
         res.status(500).send(err);
       })
   });

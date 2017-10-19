@@ -1,7 +1,9 @@
+const logger = require("winston");
 const router = require("express").Router()
 const CssMinifier = require("../minifiers/CssMinifier");
 
 router.post("/css", function(req, res) {
+
   var buffer = "";
 
   req.on("data", function(chunk) {
@@ -15,7 +17,7 @@ router.post("/css", function(req, res) {
         res.send(output.styles);
       })
       .catch(function(err) {
-        console.log("Ocorreu um erro na minificação: \n" + err);
+        logger.error("Ocorreu um erro na minificação: \n" + err);
         res.status(500).send(err);
       })
   });
