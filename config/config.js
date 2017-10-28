@@ -1,8 +1,7 @@
 var config = module.exports
 
 config.express = {
-  port: process.env.PORT || 3000,
-  ip: "localhost"
+  port: process.env.PORT || 3000
 }
 config.api = {
   acceptTypes: {
