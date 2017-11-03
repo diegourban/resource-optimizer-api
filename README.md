@@ -16,7 +16,7 @@ API to optimize web page resources
 curl -X POST -H "Content-Type: [content_type]" --data-binary "@[path_to_input]" http://localhost:3000/api/minify >> [path_to_output]
 ```
 
-Header Content Types accepted:
+Accepted Content-Types:
 - text/css
 - text/html
 - text/javascript
