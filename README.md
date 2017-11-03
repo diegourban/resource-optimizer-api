@@ -25,22 +25,28 @@ Header Content Types accepted:
 
 
 #### Examples:
+
+Minify CSS:
 ```
 curl -X POST -H "Content-Type: text/css" --data-binary "@/home/urban/Documents/inputs/input.css" http://localhost:3000/api/minify >> /home/urban/Documents/outputs/output.css
 ```
 
+Minify HTML:
 ```
 curl -X POST -H "Content-Type: text/html" --data-binary "@/home/urban/Documents/inputs/input.html" http://localhost:3000/api/minify >> /home/urban/Documents/outputs/output.html
 ```
 
+Minify JavaScript:
 ```
 curl -X POST -H "Content-Type: text/javascript" --data-binary "@/home/urban/Documents/inputs/input.js" http://localhost:3000/api/minify >> /home/urban/Documents/outputs/output.js
 ```
 
+Minify PNG:
 ```
 curl -X POST -H "Content-Type: image/png" --data-binary "@/home/urban/Documents/inputs/input.png" http://localhost:3000/api/minify >> /home/urban/Documents/outputs/output.png
 ```
 
+Minify JPEG:
 ```
 curl -X POST -H "Content-Type: image/jpeg" --data-binary "@/home/urban/Documents/inputs/input.jpg" http://localhost:3000/api/minify >> /home/urban/Documents/outputs/output.jpg
 ```
@@ -48,4 +54,4 @@ curl -X POST -H "Content-Type: image/jpeg" --data-binary "@/home/urban/Documents
 
 ### Calling the API using Postman
 
-Import resource optimizer.postman_collection.json on Postman and change the body
+Import "Resource Optimizer API.postman_collection.json" on Postman and change the body.

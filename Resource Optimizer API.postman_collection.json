@@ -1,16 +1,16 @@
 {
 	"variables": [],
 	"info": {
-		"name": "resource optimizer",
-		"_postman_id": "eef420e9-5689-a005-5265-9923e7a49a7d",
+		"name": "Resource Optimizer API",
+		"_postman_id": "66916e73-908e-0786-77c5-74952941f3d9",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "post css",
+			"name": "Minificar CSS",
 			"request": {
-				"url": "http://localhost:3000/",
+				"url": "http://localhost:3000/api/minify",
 				"method": "POST",
 				"header": [
 					{
@@ -28,9 +28,9 @@
 			"response": []
 		},
 		{
-			"name": "post html",
+			"name": "Minificar HTML",
 			"request": {
-				"url": "http://localhost:3000/",
+				"url": "http://localhost:3000/api/minify",
 				"method": "POST",
 				"header": [
 					{
@@ -48,9 +48,9 @@
 			"response": []
 		},
 		{
-			"name": "post js",
+			"name": "Minificar JavaScript",
 			"request": {
-				"url": "http://localhost:3000/",
+				"url": "http://localhost:3000/api/minify",
 				"method": "POST",
 				"header": [
 					{
@@ -68,9 +68,9 @@
 			"response": []
 		},
 		{
-			"name": "post png",
+			"name": "Minificar PNG",
 			"request": {
-				"url": "http://localhost:3000/",
+				"url": "http://localhost:3000/api/minify",
 				"method": "POST",
 				"header": [
 					{
@@ -90,9 +90,9 @@
 			"response": []
 		},
 		{
-			"name": "post jpeg",
+			"name": "Minificar JPEG",
 			"request": {
-				"url": "http://localhost:3000/",
+				"url": "http://localhost:3000/api/minify",
 				"method": "POST",
 				"header": [
 					{
@@ -106,27 +106,6 @@
 					"file": {
 						"src": ""
 					}
-				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "post form upload",
-			"request": {
-				"url": "http://localhost:3000/upload",
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "fileName",
-							"description": "",
-							"type": "file",
-							"src": "attribute.css"
-						}
-					]
 				},
 				"description": ""
 			},
