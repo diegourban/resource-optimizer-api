@@ -13,3 +13,7 @@ var server = app.listen(config.express.port, function(error) {
 .on("error", function(error) {
   logger.error("Erro inesperado : " + error);
 });
+
+app.get("/", function(req, res, next) {
+  res.redirect('/doc/index.html');
+});

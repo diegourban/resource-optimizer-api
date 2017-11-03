@@ -6,6 +6,7 @@ module.exports = function() {
   var app = express();
 
   app.use(bodyParser.raw());
+  app.use(express.static("./doc"));
 
   load("routes", {cwd : "lib"}).into(app);
 
