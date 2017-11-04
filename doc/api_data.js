@@ -9,7 +9,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Example usage:",
-        "content": "curl -X POST -H \"Content-Type: text/css\" --data-binary \"@/home/urban/inputs/input.css\" http://localhost:3000/api/minify >> /home/urban/outputs/output.css",
+        "content": "curl -X POST -H \"Content-Type: text/css\" --data-binary \"@/home/urban/inputs/input.css\" https://resource-optimizer-api.herokuapp.com/api/minify >> /home/urban/outputs/output.css",
         "type": "json"
       }
     ],
@@ -61,7 +61,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Example usage:",
-        "content": "curl -X POST -H \"Content-Type: text/html\" --data-binary \"@/home/urban/inputs/input.html\" http://localhost:3000/api/minify >> /home/urban/outputs/output.html",
+        "content": "curl -X POST -H \"Content-Type: text/html\" --data-binary \"@/home/urban/inputs/input.html\" https://resource-optimizer-api.herokuapp.com/api/minify >> /home/urban/outputs/output.html",
         "type": "json"
       }
     ],
@@ -165,7 +165,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Example usage:",
-        "content": "curl -X POST -H \"Content-Type: text/javascript\" --data-binary \"@/home/urban/inputs/input.js\" http://localhost:3000/api/minify >> /home/urban/outputs/output.js",
+        "content": "curl -X POST -H \"Content-Type: text/javascript\" --data-binary \"@/home/urban/inputs/input.js\" https://resource-optimizer-api.herokuapp.com/api/minify >> /home/urban/outputs/output.js",
         "type": "json"
       }
     ],
@@ -217,7 +217,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Example usage:",
-        "content": "curl -X POST -H \"Content-Type: image/png\" --data-binary \"@/home/urban/inputs/input.png\" http://localhost:3000/api/minify >> /home/urban/outputs/output.png",
+        "content": "curl -X POST -H \"Content-Type: image/png\" --data-binary \"@/home/urban/inputs/input.png\" https://resource-optimizer-api.herokuapp.com/api/minify >> /home/urban/outputs/output.png",
         "type": "json"
       }
     ],
