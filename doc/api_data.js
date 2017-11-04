@@ -3,7 +3,7 @@ define({ "api": [
     "type": "post",
     "url": "/api/minify",
     "title": "Minify CSS",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "name": "MinifyCSS",
     "group": "Minify",
     "examples": [
