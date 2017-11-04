@@ -1,7 +1,7 @@
 # resource-optimizer-api
 API to optimize web page resources
 
-[![Dependency Status](https://david-dm.org/diegourban/resource-optimizer-api.svg)](https://david-dm.org/diegourban/resource-optimizer-api)
+[![dependencies Status](https://david-dm.org/diegourban/resource-optimizer-api/status.svg)](https://david-dm.org/diegourban/resource-optimizer-api)
 
 ## Requirements
 * Node.js 6.x
