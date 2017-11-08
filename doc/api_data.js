@@ -8,25 +8,16 @@ define({ "api": [
     "group": "Minify",
     "examples": [
       {
-        "title": "Example usage:",
+        "title": "Exemplo:",
         "content": "curl -X POST -H \"Content-Type: text/css\" --data-binary \"@/home/urban/inputs/input.css\" https://resource-optimizer-api.herokuapp.com/api/minify >> /home/urban/outputs/output.css",
         "type": "json"
       }
     ],
     "header": {
       "fields": {
-        "Request Headers": [
+        "Header": [
           {
-            "group": "Request Headers",
-            "type": "String",
-            "optional": false,
-            "field": "Content-Type",
-            "description": "<p>text/css</p>"
-          }
-        ],
-        "Response Headers": [
-          {
-            "group": "Response Headers",
+            "group": "Header",
             "type": "String",
             "optional": false,
             "field": "Content-Type",
@@ -43,7 +34,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "body",
-            "description": "<p>Content minified</p>"
+            "description": "<p>Conteúdo minificado.</p>"
           }
         ]
       }
@@ -60,25 +51,16 @@ define({ "api": [
     "group": "Minify",
     "examples": [
       {
-        "title": "Example usage:",
+        "title": "Exemplo:",
         "content": "curl -X POST -H \"Content-Type: text/html\" --data-binary \"@/home/urban/inputs/input.html\" https://resource-optimizer-api.herokuapp.com/api/minify >> /home/urban/outputs/output.html",
         "type": "json"
       }
     ],
     "header": {
       "fields": {
-        "Request Headers": [
+        "Header": [
           {
-            "group": "Request Headers",
-            "type": "String",
-            "optional": false,
-            "field": "Content-Type",
-            "description": "<p>text/html</p>"
-          }
-        ],
-        "Response Headers": [
-          {
-            "group": "Response Headers",
+            "group": "Header",
             "type": "String",
             "optional": false,
             "field": "Content-Type",
@@ -95,7 +77,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "body",
-            "description": "<p>Content minified</p>"
+            "description": "<p>Conteúdo minificado.</p>"
           }
         ]
       }
@@ -105,32 +87,36 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/api/minify",
+    "url": "/api/minify/image",
     "title": "Minify JPEG",
     "version": "0.1.0",
     "name": "MinifyJPEG",
     "group": "Minify",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Boolean",
+            "optional": false,
+            "field": "lossless",
+            "description": "<p>true para compressão sem perdas.</p>"
+          }
+        ]
+      }
+    },
     "examples": [
       {
-        "title": "Example usage:",
-        "content": "curl -X POST -H \"Content-Type: image/jpeg\" --data-binary \"@/home/urban/inputs/input.jpg\" http://localhost:3000/api/minify >> /home/urban/outputs/output.jpg",
+        "title": "Exemplo:",
+        "content": "curl -X POST -H \"Content-Type: image/jpeg\" --data-binary \"@/home/urban/inputs/input.jpg\" https://resource-optimizer-api.herokuapp.com/api/minify/image >> /home/urban/outputs/output.jpg",
         "type": "json"
       }
     ],
     "header": {
       "fields": {
-        "Request Headers": [
+        "Header": [
           {
-            "group": "Request Headers",
-            "type": "String",
-            "optional": false,
-            "field": "Content-Type",
-            "description": "<p>image/jpeg</p>"
-          }
-        ],
-        "Response Headers": [
-          {
-            "group": "Response Headers",
+            "group": "Header",
             "type": "String",
             "optional": false,
             "field": "Content-Type",
@@ -147,7 +133,7 @@ define({ "api": [
             "type": "Buffer",
             "optional": false,
             "field": "body",
-            "description": "<p>Content minified</p>"
+            "description": "<p>Conteúdo minificado.</p>"
           }
         ]
       }
@@ -164,25 +150,16 @@ define({ "api": [
     "group": "Minify",
     "examples": [
       {
-        "title": "Example usage:",
+        "title": "Exemplo:",
         "content": "curl -X POST -H \"Content-Type: text/javascript\" --data-binary \"@/home/urban/inputs/input.js\" https://resource-optimizer-api.herokuapp.com/api/minify >> /home/urban/outputs/output.js",
         "type": "json"
       }
     ],
     "header": {
       "fields": {
-        "Request Headers": [
+        "Header": [
           {
-            "group": "Request Headers",
-            "type": "String",
-            "optional": false,
-            "field": "Content-Type",
-            "description": "<p>text/javascript</p>"
-          }
-        ],
-        "Response Headers": [
-          {
-            "group": "Response Headers",
+            "group": "Header",
             "type": "String",
             "optional": false,
             "field": "Content-Type",
@@ -199,7 +176,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "body",
-            "description": "<p>Content minified</p>"
+            "description": "<p>Conteúdo minificado.</p>"
           }
         ]
       }
@@ -209,32 +186,36 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/api/minify",
+    "url": "/api/minify/image",
     "title": "Minify PNG",
     "version": "0.1.0",
     "name": "MinifyPNG",
     "group": "Minify",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "quality",
+            "description": "<p>Nível de Qualidade: low, med ou high.</p>"
+          }
+        ]
+      }
+    },
     "examples": [
       {
-        "title": "Example usage:",
-        "content": "curl -X POST -H \"Content-Type: image/png\" --data-binary \"@/home/urban/inputs/input.png\" https://resource-optimizer-api.herokuapp.com/api/minify >> /home/urban/outputs/output.png",
+        "title": "Exemplo:",
+        "content": "curl -X POST -H \"Content-Type: image/png\" --data-binary \"@/home/urban/inputs/input.png\" https://resource-optimizer-api.herokuapp.com/api/minify/image >> /home/urban/outputs/output.png",
         "type": "json"
       }
     ],
     "header": {
       "fields": {
-        "Request Headers": [
+        "Header": [
           {
-            "group": "Request Headers",
-            "type": "String",
-            "optional": false,
-            "field": "Content-Type",
-            "description": "<p>image/png</p>"
-          }
-        ],
-        "Response Headers": [
-          {
-            "group": "Response Headers",
+            "group": "Header",
             "type": "String",
             "optional": false,
             "field": "Content-Type",
@@ -251,7 +232,7 @@ define({ "api": [
             "type": "Buffer",
             "optional": false,
             "field": "body",
-            "description": "<p>Content minified</p>"
+            "description": "<p>Conteúdo minificado.</p>"
           }
         ]
       }
