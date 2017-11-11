@@ -87,7 +87,7 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/api/minify/image",
+    "url": "/api/minify",
     "title": "Minify JPEG",
     "version": "0.1.0",
     "name": "MinifyJPEG",
@@ -100,7 +100,7 @@ define({ "api": [
             "type": "Boolean",
             "optional": false,
             "field": "lossless",
-            "description": "<p>true para compressão sem perdas.</p>"
+            "description": "<p>?lossless=true para realizar a compressão sem perdas. Opções possíveis são: true ou false</p>"
           }
         ]
       }
@@ -108,7 +108,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Exemplo:",
-        "content": "curl -X POST -H \"Content-Type: image/jpeg\" --data-binary \"@/home/urban/inputs/input.jpg\" https://resource-optimizer-api.herokuapp.com/api/minify/image >> /home/urban/outputs/output.jpg",
+        "content": "curl -X POST -H \"Content-Type: image/jpeg\" --data-binary \"@/home/urban/inputs/input.jpg\" https://resource-optimizer-api.herokuapp.com/api/minify >> /home/urban/outputs/output.jpg",
         "type": "json"
       }
     ],
@@ -186,7 +186,7 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/api/minify/image",
+    "url": "/api/minify",
     "title": "Minify PNG",
     "version": "0.1.0",
     "name": "MinifyPNG",
@@ -199,7 +199,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "quality",
-            "description": "<p>Nível de Qualidade: low, med ou high.</p>"
+            "description": "<p>?quality=high para definir que a qualidade da imagem deve permanecer alta. Opções possíveis são: low, average ou high</p>"
           }
         ]
       }
@@ -207,7 +207,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Exemplo:",
-        "content": "curl -X POST -H \"Content-Type: image/png\" --data-binary \"@/home/urban/inputs/input.png\" https://resource-optimizer-api.herokuapp.com/api/minify/image >> /home/urban/outputs/output.png",
+        "content": "curl -X POST -H \"Content-Type: image/png\" --data-binary \"@/home/urban/inputs/input.png\" https://resource-optimizer-api.herokuapp.com/api/minify >> /home/urban/outputs/output.png",
         "type": "json"
       }
     ],

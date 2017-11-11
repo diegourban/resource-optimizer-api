@@ -19,7 +19,9 @@
   "homepage": "https://github.com/diegourban/resource-optimizer-api#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "clean-css": "^4.1.9",
     "crass": "^0.11.1",
+    "csso": "^3.4.0",
     "express": "^4.16.2",
     "express-load": "^1.1.16",
     "html-minifier": "^3.5.6",
