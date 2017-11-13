@@ -5,9 +5,12 @@ config.express = {
 }
 config.api = {
   acceptTypes: {
-    html: "text/html",
     css: "text/css",
     js: "text/javascript",
-    image: ["image/jpeg", "image/png"]
+    html: "text/html",
+    images: {
+      jpeg: "image/jpeg",
+      png: "image/png"
+    }
   }
 }
