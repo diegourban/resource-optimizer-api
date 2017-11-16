@@ -5,7 +5,7 @@ define({ "api": [
     "title": "Minify CSS",
     "version": "0.2.0",
     "name": "MinifyCSS",
-    "group": "Minify",
+    "group": "API",
     "examples": [
       {
         "title": "Exemplo:",
@@ -40,7 +40,7 @@ define({ "api": [
       }
     },
     "filename": "lib/routers/CssRouter.js",
-    "groupTitle": "Minify"
+    "groupTitle": "API"
   },
   {
     "type": "post",
@@ -48,7 +48,7 @@ define({ "api": [
     "title": "Minify HTML",
     "version": "0.1.0",
     "name": "MinifyHTML",
-    "group": "Minify",
+    "group": "API",
     "examples": [
       {
         "title": "Exemplo:",
@@ -83,15 +83,58 @@ define({ "api": [
       }
     },
     "filename": "lib/routers/HtmlRouter.js",
-    "groupTitle": "Minify"
+    "groupTitle": "API"
   },
   {
     "type": "post",
     "url": "/api/minify",
-    "title": "Minify JPEG",
+    "title": "Minify JS",
     "version": "0.1.0",
-    "name": "MinifyJPEG",
-    "group": "Minify",
+    "name": "MinifyJS",
+    "group": "API",
+    "examples": [
+      {
+        "title": "Exemplo:",
+        "content": "curl -X POST -H \"Content-Type: text/javascript\" --data-binary \"@/home/urban/inputs/input.js\" https://resource-optimizer-api.herokuapp.com/api/minify >> /home/urban/outputs/output.js",
+        "type": "json"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>text/javascript</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "body",
+            "description": "<p>Conteúdo minificado.</p>"
+          }
+        ]
+      }
+    },
+    "filename": "lib/routers/JsRouter.js",
+    "groupTitle": "API"
+  },
+  {
+    "type": "post",
+    "url": "/api/minify",
+    "title": "Optimize JPEG",
+    "version": "0.1.0",
+    "name": "OptimizeJPEG",
+    "group": "API",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -99,8 +142,8 @@ define({ "api": [
             "group": "Parameter",
             "type": "Boolean",
             "optional": false,
-            "field": "lossless",
-            "description": "<p>?lossless=true para realizar a compressão sem perdas. Opções possíveis são: true ou false</p>"
+            "field": "jpegQuality",
+            "description": "<p>?jpegQuality=high para definir que a qualidade da imagem deve permanecer alta. Opções possíveis são: low, average ou high</p>"
           }
         ]
       }
@@ -139,58 +182,15 @@ define({ "api": [
       }
     },
     "filename": "lib/routers/ImageRouter.js",
-    "groupTitle": "Minify"
+    "groupTitle": "API"
   },
   {
     "type": "post",
     "url": "/api/minify",
-    "title": "Minify JS",
+    "title": "Optimize PNG",
     "version": "0.1.0",
-    "name": "MinifyJS",
-    "group": "Minify",
-    "examples": [
-      {
-        "title": "Exemplo:",
-        "content": "curl -X POST -H \"Content-Type: text/javascript\" --data-binary \"@/home/urban/inputs/input.js\" https://resource-optimizer-api.herokuapp.com/api/minify >> /home/urban/outputs/output.js",
-        "type": "json"
-      }
-    ],
-    "header": {
-      "fields": {
-        "Header": [
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "Content-Type",
-            "description": "<p>text/javascript</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "body",
-            "description": "<p>Conteúdo minificado.</p>"
-          }
-        ]
-      }
-    },
-    "filename": "lib/routers/JsRouter.js",
-    "groupTitle": "Minify"
-  },
-  {
-    "type": "post",
-    "url": "/api/minify",
-    "title": "Minify PNG",
-    "version": "0.1.0",
-    "name": "MinifyPNG",
-    "group": "Minify",
+    "name": "OptimizePNG",
+    "group": "API",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -199,7 +199,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "quality",
-            "description": "<p>?quality=high para definir que a qualidade da imagem deve permanecer alta. Opções possíveis são: low, average ou high</p>"
+            "description": "<p>?pngQuality=high para definir que a qualidade da imagem deve permanecer alta. Opções possíveis são: low, average ou high</p>"
           }
         ]
       }
@@ -232,12 +232,12 @@ define({ "api": [
             "type": "Buffer",
             "optional": false,
             "field": "body",
-            "description": "<p>Conteúdo minificado.</p>"
+            "description": "<p>Conteúdo otimizado.</p>"
           }
         ]
       }
     },
     "filename": "lib/routers/ImageRouter.js",
-    "groupTitle": "Minify"
+    "groupTitle": "API"
   }
 ] });
