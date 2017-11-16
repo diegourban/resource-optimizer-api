@@ -198,7 +198,7 @@ define({ "api": [
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "quality",
+            "field": "pngQuality",
             "description": "<p>?pngQuality=high para definir que a qualidade da imagem deve permanecer alta. Opções possíveis são: low, average ou high</p>"
           }
         ]
