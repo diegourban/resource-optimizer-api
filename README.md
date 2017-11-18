@@ -33,14 +33,14 @@ Minify CSS:
 curl -X POST -H "Content-Type: text/css" --data-binary "@/home/urban/inputs/input.css" http://localhost:3000/api/minify >> /home/urban/outputs/output.css
 ```
 
-Minify HTML:
-```
-curl -X POST -H "Content-Type: text/html" --data-binary "@/home/urban/inputs/input.html" http://localhost:3000/api/minify >> /home/urban/outputs/output.html
-```
-
 Minify JavaScript:
 ```
 curl -X POST -H "Content-Type: text/javascript" --data-binary "@/home/urban/inputs/input.js" http://localhost:3000/api/minify >> /home/urban/outputs/output.js
+```
+
+Minify HTML:
+```
+curl -X POST -H "Content-Type: text/html" --data-binary "@/home/urban/inputs/input.html" http://localhost:3000/api/minify >> /home/urban/outputs/output.html
 ```
 
 Minify PNG:
