@@ -17,3 +17,5 @@ var server = app.listen(config.express.port, function(error) {
 app.get("/", function(req, res, next) {
   res.redirect('/doc/index.html');
 });
+
+module.exports = server;

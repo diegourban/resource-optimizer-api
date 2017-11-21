@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -R spec test/"
   },
   "repository": {
     "type": "git",
@@ -30,5 +30,7 @@
     "imagemin-pngquant": "^5.0.1",
     "winston": "^2.4.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "supertest": "^3.0.0"
+  }
 }

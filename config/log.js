@@ -4,9 +4,8 @@ const logfile = "api.log";
 
 winston.add(winston.transports.File, { filename: logfile });
 
-if (process.env.NODE_ENV === "production") {
-  // Heroku não permite criar arquivos
-  //winston.remove(winston.transports.Console);
+if (process.env.NODE_ENV === "test") {
+  winston.remove(winston.transports.Console);
 }
 
 module.exports = winston;
